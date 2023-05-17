@@ -39,6 +39,15 @@ const Home = () => {
 
 This code will render the `Home` component on the server, and it will pass the `data` object as props to the component.
 
+**Here are the steps on how server side rendering works in Next.js:**
+
+1. When a user requests a page, the Next.js server receives the request.
+2. The Next.js server then calls the getServerSideProps function for the requested page.
+3. The getServerSideProps function fetches any data that is needed to render the page, such as data from an API.
+4. The getServerSideProps function then returns an object with the props that will be passed to the page component.
+5. The Next.js server then renders the page using the props that were returned from the getServerSideProps function.
+6. The rendered HTML is then sent to the user's browser.
+
 SSR can improve the performance of your web application by reducing the amount of work that needs to be done on the client. This can make your application load faster and more responsive.
 
 If you are looking to improve the performance of your web application, then you should consider using SSR. Next.js makes it easy to use SSR, and it can be a great way to improve the performance of your application.
