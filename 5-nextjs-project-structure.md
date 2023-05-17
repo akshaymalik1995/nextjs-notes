@@ -25,6 +25,17 @@
 
 ```
 
+**`_app.js` and `_document.js`**
+
+
+The `_app.js` and `_document.js` files are special files in Next.js that allow you to customize the behavior of your application.
+
+The `_app.js` file is rendered on both the server and the client, while the `_document.js` file is only rendered on the server.
+
+The `_app.js` file is a good place to add global state, global styles, and other things that you want to be available to all of your pages.
+
+The `_document.js` file is a good place to add custom HTML attributes, head elements, and other things that you want to be added to the document head.
+
 **app.js**
 
 The `app.js` file is the main entry point for your Next.js application. It is where you can configure your application and import your components.
