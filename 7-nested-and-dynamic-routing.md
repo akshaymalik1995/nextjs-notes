@@ -62,3 +62,50 @@ For instance, if we have a blog post with the slug "my-first-post," the URL for 
 Nested routes allow us to define a hierarchy within our pages and create more complex website structures. We can further extend this concept to create additional nested routes by creating more files and folders within the "pages" directory.
 
 Keep in mind that Next.js automatically handles the routing based on the file system structure, so there is no need to set up explicit routing rules.
+
+## Extracting Params from the Dynamic Route
+
+### Client Side
+
+1. **Using the `useRouter` hook**
+
+The `useRouter` hook provides access to the current router state, including the current path and params. To extract the params from the dynamic route, you can use the following code:
+
+```
+const { params } = useRouter();
+const id = params.id;
+```
+
+Here is an example of how to use the `useRouter` hook to extract the params from the dynamic route:
+
+```
+import { useRouter } from "next/router";
+const Home = () => {
+  const { params } = useRouter();
+
+  const id = params.id;
+
+  return (
+    <h1>The id is {id}</h1>
+  );
+};
+```
+
+### Server Side
+
+```js
+export async function getServerSideProps({ params }) {
+    const { productId } = params;
+    const response = await fetch(`http://localhost:8080/products/${productId}`);
+    const product = await response.json();
+    return {
+        props: {
+            product,
+        },
+    };  
+}
+```
+
+
+
+
