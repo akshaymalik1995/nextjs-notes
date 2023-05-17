@@ -30,3 +30,24 @@ Next.js handles much of these code transformations and underlying infrastructure
 This is made possible because Next.js has a compiler written in Rust, a low-level programming language, and SWC, a platform that can be used for compilation, minification, bundling, and more.
 
 In the next sections, we'll explore what each of these transformations are.
+
+## What is Compiling?
+Developers write code in languages that are more developer-friendly such as JSX, TypeScript, and modern versions of JavaScript. While these languages improve the efficiency and confidence of developers, they need to be compiled into JavaScript before browsers can understand them.
+
+Compiling refers to the process of taking code in one language and outputting it in another language or another version of that language.
+
+![image](https://github.com/akshaymalik1995/nextjs-notes/assets/55041489/adb2f60e-c67c-423a-9432-c27b8c90a29e)
+
+In Next.js, compilation happens during the development stage as you edit your code, and as part of the build step to prepare your application for production.
+
+## What is Minifying?
+
+Developers write code that is optimized for human readability. This code might contain extra information that is not necessary for the code to run, such as comments, spaces, indents, and multiple lines.
+
+![image](https://github.com/akshaymalik1995/nextjs-notes/assets/55041489/b84e180b-931e-4102-b724-c35f6dd4e49c)
+
+Minification is the process of removing unnecessary code formatting and comments without changing the code’s functionality. The goal is to improve the application’s performance by decreasing file sizes.
+
+In Next.js, JavaScript and CSS files are automatically minified for production.
+
+
