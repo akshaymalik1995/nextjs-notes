@@ -5,7 +5,7 @@ To start a Next.js project, you can use the `create-next-app` command. This comm
 To use the `create-next-app` command, you need to have Node.js installed on your computer. Once you have Node.js installed, you can run the following command to create a new Next.js project:
 
 ```
-npx create-next-app my-app
+npx create-next-app@latest my-app
 ```
 
 This command will create a new directory named `my-app` with all the necessary files and dependencies. You can then start the development server by running the following command:
