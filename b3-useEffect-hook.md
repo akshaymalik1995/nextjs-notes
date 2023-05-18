@@ -1,4 +1,6 @@
 
+# The useEffect Hook
+
 The `useEffect` hook is a React hook that allows you to run side effects in your components. Side effects are things like fetching data, directly updating the DOM, and timers.
 
 `useEffect` accepts two arguments:
