@@ -49,3 +49,45 @@ export default function Home() {
 This code will render a list of links to the `/about` and `/blog/[slug]` pages. The link to the `/about` page will have the label "About Us", and the link to the `/blog/[slug]` page will have the `rel="external"` attribute, which will tell the browser to open the link in a new tab.
 
 The `Link` component is a powerful tool that can be used to navigate between pages in Next.js applications. It provides a number of features that can improve the performance and user experience of your application, such as prefetching and client-side navigation.
+
+## Set href using an object
+
+To set href in the Link component of Next.js using an object, you can use the `href` prop. The `href` prop takes an object as its value, and the object can have the following properties:
+
+* `pathname`: The path of the link.
+* `query`: The query string of the link.
+* `hash`: The hash of the link.
+
+For example, the following code sets the href of a link to the `/blog/[id]` page:
+
+```
+import Link from 'next/link';
+
+export default function Home() {
+  return (
+    <ul>
+      <li>
+        <Link href={{ pathname: '/blog/[id]', query: { id: 'test' }, }}>How to achieve success</Link>
+      </li>
+    </ul>
+  );
+}
+```
+
+The `href` prop can also be used to set the href of a link to an external URL. For example, the following code sets the href of a link to the Google homepage:
+
+```
+import Link from 'next/link';
+
+export default function Home() {
+  return (
+    <ul>
+      <li>
+        <Link href="https://www.google.com">Google</Link>
+      </li>
+    </ul>
+  );
+}
+```
+
+The `href` prop is a powerful tool that can be used to set the href of a link to any page or URL.
