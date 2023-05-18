@@ -23,4 +23,5 @@ export default function App(props) {
 ```
 
 The `App` component render the component that is required to display the current page that the client has accessed.
+
 As a prop, it recieves the component that needs to be rendered to display UI for the current page and also the props required for that component.
