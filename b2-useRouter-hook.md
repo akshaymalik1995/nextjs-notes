@@ -31,7 +31,7 @@ export default function Home() {
 
 This code will render the text "The current path is /" if the user is on the home page. If the user is on a different page, the text will be updated to reflect the current path.
 
-The `useRouter` hook can also be used to navigate to new routes. To do this, you can use the `push` method on the `history` object. The `push` method takes a path as its argument, and it will navigate the browser to the specified path.
+The `useRouter` hook can also be used to navigate to new routes. To do this, you can use the `push` method. The `push` method takes a path as its argument, and it will navigate the browser to the specified path.
 
 Here is an example of how to use the `useRouter` hook to navigate to the `/about` page:
 
@@ -42,7 +42,7 @@ export default function Home() {
   const router = useRouter();
 
   function handleClick() {
-    router.history.push('/about');
+    route.push('/about');
   }
 
   return (
