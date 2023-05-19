@@ -124,4 +124,31 @@ Also, you must use export getStaticProps as a standalone function — it will no
 ## Runs on every request in development
 In development (next dev), getStaticProps will be called on every request.
 
+## Configuration Options
+
+Here are the configuration options available in `getStaticProps`:
+
+- `revalidate`: This option is used to enable ISR and sets the time (in seconds) to re-generate the page after the initial build. For example, `{ revalidate: 60 }` will re-generate the page every 60 seconds. [Source 0](https://nextjs.org/docs/basic-features/data-fetching), [Source 1](https://stackoverflow.com/questions/66165707/nextjs-getstaticprops-revalidate-not-working), [Source 4](https://stackoverflow.com/questions/62701494/next-js-getstaticprops-not-updating-fetch-values-in-production)
+- `notFound`: This option is used to return a 404 page when the data being fetched by `getStaticProps` is not found. For example, `{ notFound: true }` will return a 404 page. [Source 0](https://nextjs.org/docs/basic-features/data-fetching)
+- `redirect`: This option is used to redirect the user to another page when the data being fetched by `getStaticProps` is not found. For example, `{ redirect: { destination: '/', permanent: false } }` will redirect the user to the homepage. [Source 0](https://nextjs.org/docs/basic-features/data-fetching)
+
+To use these options, they can be added to the object returned by `getStaticProps`. For example:
+
+```jsx
+export async function getStaticProps(context) {
+  // fetch data
+  const data = await fetch('/api/data');
+  
+  // return data and configuration options
+  return {
+    props: { data },
+    revalidate: 60,
+    notFound: true,
+    redirect: { destination: '/', permanent: false }
+  }
+}
+```
+
+Note that `revalidate` only works when the Next.js server is running. When using `next export` to generate static files, ISR will not work. [Source 1](https://stackoverflow.com/questions/66165707/nextjs-getstaticprops-revalidate-not-working), [Source 3](https://www.reddit.com/r/nextjs/comments/lyg4ci/revalidate_on_getstaticprops_does_not_trigger/)
+
 
