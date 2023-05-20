@@ -1,4 +1,4 @@
-# getStaticPaths
+# `getStaticPaths`
 
 getStaticPaths is a Next.js function that allows you to pre-render pages during the build process. This can improve the performance of your application by reducing the number of requests that need to be made to the server.
 
